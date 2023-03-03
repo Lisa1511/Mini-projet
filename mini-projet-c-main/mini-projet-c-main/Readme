@@ -1,0 +1,54 @@
+Nom-prénom1 :  DUVALLET Lisa                                               
+Nom-prénom2 : TITRI Sophia 
+Documentation des fonctions et cas d’erreur :
+
+1/ isNorme
+La fonction permet de vérifier la norme (en utilisant les caractères dans le « input » si les premiers caractères correspondent aux caractères du tableau ainsi que l'ordre est bon)                               
+
+
+2/ getIndice
+Cette fonction permet de récupérer l'indice du premier caractère de chaque élément de l'input,
+ / Un élément étant séparé par des virgules
+ / Le return i+1 est nécessaire car notre boucle s'arrête que à la virgule, et nous souhaitons avoir le premier caractère
+
+3/ getInfo
+Sert à récupérer l'élément voulu
+
+4/ editNumber
+Cette fonction permet d'ignorer les décimales lointaines d'un nombre.
+ Ici on garde seulement les 2 premiers chiffres (d'où first et second en nom de variable)
+  
+5/ setTime
+Permet de convertir l'affichage du temps exemple: 1237821631 secondes en .. Heures .. Minutes .. Seconde
+
+6/ setCoordinates
+Permet de convertir l'affichage des coordonnées, de les avoir en brut et les afficher de manière plus explicite, par exemple : Latitude : 50° Nord = 32°21' Ouest
+
+7/main
+On crée différents tableaux, le premier message, nous permet de stocker le contenu de ce que rentre l'utilisateur (input)
+     Ensuite les autres tableaux permettent de stocker les différents éléments qui constituent le tableau message.
+Enfin on crée une variable de type « int » qui permettra de vérifier la validité de la norme (Si le message passé en entrée est sous la bonne norme)
+
+
+
+ On récupère ce que rentre l'utilisateur
+    scanf("%s", message);    
+
+Ici on vérifie le format
+    isFormatOk = isNorme(message);
+
+     Si le format est bon :
+    if (isFormatOk == 1){
+        On utilise la fonction getInfo, qui permet, en fonction de l'input de l'utilisateur, de catégoriser chaque élément de cet input.
+        Par exemple, la ligne de dessous, nous permet en fonction de notre tableau message, de récupérer l'élément correspondant au temps, et de l'affecter dans le tableau time,
+         Et le 1 permet juste de préciser ou se situe l'élément dans le input.
+
+
+
+Dans le setTime
+   Ici on formate les tableaux :
+        Quand on a rempli les tableaux, on leur a affecté une valeur "brute", et ici on la convertit sous un bon format :
+         On passe ainsi de 1351353 à 2h 36min 20sec
+
+Et on fait pareil pour la longitude et latitude avec le setCoordinates
+Et si on n’a pas le bon format, alors on arrête l'exécution et on affiche ce message d'erreur au préalable.
